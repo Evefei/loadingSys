@@ -20,6 +20,10 @@ import loading, {
 import loadingInfo, {
   LoadingInfoState
 } from 'app/entities/loading-info/loading-info.reducer';
+// prettier-ignore
+import vehicle, {
+  VehicleState
+} from 'app/entities/vehicle/vehicle.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -35,6 +39,7 @@ export interface IRootState {
   readonly settings: SettingsState;
   readonly loading: LoadingState;
   readonly loadingInfo: LoadingInfoState;
+  readonly vehicle: VehicleState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -52,6 +57,7 @@ const rootReducer = combineReducers<IRootState>({
   settings,
   loading,
   loadingInfo,
+  vehicle,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });

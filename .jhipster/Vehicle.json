@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "carLicenseNo",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "length",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "width",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "height",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "vehicleVolume",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "vehicleWeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "underpanHeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "crankHeight",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "crankWidth",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20181129054118",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "vehicle",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

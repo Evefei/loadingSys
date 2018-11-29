@@ -6,6 +6,7 @@ import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 
 import Loading from './loading';
 import LoadingInfo from './loading-info';
+import Vehicle from './vehicle';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
@@ -14,6 +15,7 @@ const Routes = ({ match }) => (
       {/* prettier-ignore */}
       <ErrorBoundaryRoute path={`${match.url}/loading`} component={Loading} />
       <ErrorBoundaryRoute path={`${match.url}/loading-info`} component={LoadingInfo} />
+      <ErrorBoundaryRoute path={`${match.url}/vehicle`} component={Vehicle} />
       {/* jhipster-needle-add-route-path - JHipster will routes here */}
     </Switch>
   </div>

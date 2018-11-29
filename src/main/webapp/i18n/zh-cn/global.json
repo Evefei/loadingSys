@@ -9,6 +9,7 @@
         "main": "数据",
         "loading": "Loading",
         "loadingInfo": "Loading Info",
+        "vehicle": "Vehicle",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
