@@ -1,0 +1,35 @@
+{
+  "loadingSysApp": {
+    "loadingInfo": {
+      "home": {
+        "title": "Loading Infos",
+        "createLabel": "创建新 Loading Info",
+        "createOrEditLabel": "创建或编辑 Loading Info"
+      },
+      "created": "Loading Info {{ param }} 创建成功",
+      "updated": "Loading Info {{ param }} 更新成功",
+      "deleted": "Loading Info {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Loading Info {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Loading Info"
+      },
+      "step": "Step",
+      "materialCode": "Material Code",
+      "colorCode": "Color Code",
+      "layoutType": "Layout Type",
+      "quantity": "Quantity",
+      "row": "Row",
+      "column": "Column",
+      "layer": "Layer",
+      "lengthPosition": "Length Position",
+      "widthPosition": "Width Position",
+      "heightPosition": "Height Position",
+      "length": "Length",
+      "width": "Width",
+      "height": "Height",
+      "loadingId": "Loading Id"
+    }
+  }
+}
