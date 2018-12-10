@@ -1,15 +1,11 @@
 package com.domain;
 
-
 import java.util.ArrayList;
 
-import org.python.core.PyObject;
-import org.python.core.PyType;
+public class GenerateLoadingParam{
 
-public class GenerateLoadingParam extends PyObject{
-	
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer uid;
@@ -18,8 +14,8 @@ public class GenerateLoadingParam extends PyObject{
 	//private PackingDetailParam[] packingDetail;
 	private VehicleData vehicleData;
 	private ConfigParam configParam;
-	
-	
+
+
 	public Integer getUid() {
 		return uid;
 	}
@@ -32,8 +28,8 @@ public class GenerateLoadingParam extends PyObject{
 	public void setAssign_code(Integer assign_code) {
 		this.assign_code = assign_code;
 	}
-	
-	
+
+
 	public ArrayList<PackingDetailParam> getPackingDetail() {
 		return packingDetail;
 	}
@@ -52,7 +48,7 @@ public class GenerateLoadingParam extends PyObject{
 	public void setConfigParam(ConfigParam configParam) {
 		this.configParam = configParam;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "GenerateLoadingParam [uid=" + uid + ", assign_code=" + assign_code + ", packingDetail=" + packingDetail

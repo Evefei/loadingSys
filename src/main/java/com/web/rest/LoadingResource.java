@@ -3,22 +3,17 @@ package com.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.domain.GenerateLoadingParam;
 import com.domain.Loading;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.repository.LoadingRepository;
 import com.web.rest.errors.BadRequestAlertException;
 import com.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.python.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.python.core.PyClass;
-import org.python.core.PyFunction;
-import org.python.core.PyInteger;
-import org.python.core.PyList;
-import org.python.core.PyObject;
-import org.python.core.PyString;
-import org.python.core.PyType;
 import org.python.util.PythonInterpreter;
  
 import java.util.Properties;
@@ -139,31 +134,19 @@ public class LoadingResource {
     @Timed
     public String generateLoading(@RequestBody GenerateLoadingParam generateLoadingParam) throws URISyntaxException {
         log.debug("REST request to save Loading : {}", generateLoadingParam);
+        // python对象名
+        String pythonObjName = "cal";
+        // python类名
+        String pythonClazzName = "Algorithm";
         PythonInterpreter interpreter = new PythonInterpreter();
-        //加载python类文件
-        interpreter.execfile("./hello.py");
-     // 第一个参数为期望获得的函数（变量）的名字，第二个参数为期望返回的对象类型
-        PyFunction pyFunction = interpreter.get("add", PyFunction.class);
-		//调用函数，如果函数需要参数，在Java中必须先将参数转化为对应的“Python类型”
-//        int a = 5, b = 10;
-        PyObject pyobj = pyFunction.__call__(generateLoadingParam); 
-        //直接运行python语句
-//        interpreter.exec("a=[5,2,3,9,4,0]; ");
-//        interpreter.exec("print(sorted(a));");
-        System.out.println(generateLoadingParam);
-//        if (packingDetail.getId() != null) {
-//            throw new BadRequestAlertException("A new loading cannot already have an ID", ENTITY_NAME, "idexists");
-//        }
-//        Loading loading.setLoadingNo();
-        JSONArray returnLoading= new JSONArray();
-        returnLoading.put("dsfsd");
-        returnLoading.put("aaaaa");
-        String jsonStr = returnLoading.toString();
-        System.out.println(jsonStr);
-//        Loading result = loadingRepository.save(loading);
-        return jsonStr;
-//		return ResponseEntity.created(new URI("/api/generateLoading/" + loading.getId()))
-//            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, loading.getId().toString()))
-//            .body(loading);
+        // 加载python程序
+        interpreter.execfile("hello.py");
+        // 实例化python对象
+        interpreter.exec(pythonObjName + "=" + pythonClazzName + "()");
+        // 获取实例化的python对象
+        PyObject pyObj = interpreter.get(pythonObjName);
+        // 调用python对象方法,传递参数并接收返回值
+        PyObject result = pyObj.invoke("cal", new PyObject[] {Py.java2py(generateLoadingParam)});
+        return String.valueOf(result);
     }
 }
